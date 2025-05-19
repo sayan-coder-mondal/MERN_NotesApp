@@ -20,7 +20,7 @@ const Login = () => {
         // console.log("Submit");
         e.preventDefault();
         setLoading(true);
-        axios.post("/api/login", loginUser,{
+        axios.post("https://notevaults.vercel.app/api/login", loginUser,{
             headers: {
                 'Content-Type': 'application/json'
             },
