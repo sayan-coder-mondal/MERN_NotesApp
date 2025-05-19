@@ -15,6 +15,7 @@ import express from "express";
 const app = express();
 import cookieParser from "cookie-parser";
 import database from "../config/mongodb.js";
+database();
 import authRoutes from "../routes/authRoutes.js";
 import noteRoutes from "../routes/noteRoutes.js";
 import path from "path";
@@ -44,6 +45,5 @@ app.get(/^\/(?!api).*/, (req, res) => {
 
 
 app.listen(8000, () => {
-    database();
     console.log("App is running...");
 })
