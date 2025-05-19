@@ -13,7 +13,7 @@ const Header = () => {
     const navigate = useNavigate();
 
     function handleLogout() {
-        axios.get("/api/logout")
+        axios.get("/api/logout",{ withCredentials: true })
             .then((response) => {
                 if (response.data.success) {
                     dispatch(setAuthUser(false));
