@@ -20,7 +20,12 @@ const Login = () => {
         // console.log("Submit");
         e.preventDefault();
         setLoading(true);
-        axios.post("/api/login", loginUser)
+        axios.post("/api/login", loginUser,{
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            withCredentials: true
+        })
             .then((response) => {
                 console.log(response.data)
                 if (response.data.success == true) {

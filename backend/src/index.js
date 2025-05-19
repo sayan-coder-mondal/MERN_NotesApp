@@ -19,7 +19,7 @@ database();
 import authRoutes from "../routes/authRoutes.js";
 import noteRoutes from "../routes/noteRoutes.js";
 import path from "path";
-import fs from "fs";
+import cors from "cors";
 
 
 
@@ -30,6 +30,16 @@ app.use(express.json());
 
 // Use cookie-parser middleware
 app.use(cookieParser());
+
+
+
+
+const corsOptions = {
+    origin: process.env.URL,
+    credentials: true
+}
+app.use(cors(corsOptions));
+
 
 
 // app.use("/api",userRoutes);
